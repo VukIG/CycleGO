@@ -96,7 +96,7 @@ export function CampingView({ onSelectLocation }: {
       {/* Map Preview (Placeholder) */}
       <div className="rounded-2xl bg-slate-800/50 border border-slate-700 mb-6 flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-30 bg-[url('https://cartodb-basemaps-a.global.ssl.fastly.net/dark_all/14/8192/5461.png')] bg-cover" />
-        <img src="../res/image.png" alt="" />
+        <img src="https://pulainfo.hr/wp-content/themes/onepress/assets/images/informations-mobile.jpg" alt="" />
       </div>
       <div className="flex justify-between items-end mb-6">
         <div>

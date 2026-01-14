@@ -120,7 +120,7 @@ export function ChallengesView({ onNavigateToCamping }: { onNavigateToCamping: (
     {/* 1. BACKGROUND IMAGE LAYER */}
     <div 
       className="absolute inset-0 z-0 bg-cover bg-center"
-      style={{ backgroundImage: `url('../res/image.png')` }}
+      style={{ backgroundImage: `url('https://pulainfo.hr/wp-content/themes/onepress/assets/images/informations-mobile.jpg')` }}
     />
 
     {/* 2. GRADIENT OVERLAY LAYER */}
