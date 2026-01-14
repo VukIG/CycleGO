@@ -37,18 +37,7 @@ export function NavigationHeader({
             <span className="font-medium">Map</span>
           </span>
         </button>
-
-        <button onClick={view === 'map' ? onToggle : undefined} className={`relative px-4 py-2 rounded-full flex items-center gap-2 text-sm transition-colors ${view === 'stats' ? 'text-black' : 'text-white/60 hover:text-white'}`}>
-          {view === 'stats' && <motion.div layoutId="activeTab" className="absolute inset-0 bg-[#00f0ff] rounded-full" transition={{
-          type: 'spring',
-          bounce: 0.2,
-          duration: 0.6
-        }} />}
-          <span className="relative z-10 flex items-center gap-2">
-            <BarChart2 size={14} />
-            <span className="font-medium">Stats</span>
-          </span>
-        </button>
+  
       </div>
 
       {/* Menu Button */}

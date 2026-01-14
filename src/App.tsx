@@ -9,7 +9,6 @@ import { MapSearch } from './components/MapSearch';
 import { ChallengesView } from './components/ChallengesView';
 import { CampingView } from './components/CampingView';
 import { ProfileView } from './components/ProfileView';
-import { MobileStats } from './components/MobileStats';
 export function App() {
   const [activeTab, setActiveTab] = useState('map');
   const [isSheetOpen, setIsSheetOpen] = useState(false);
@@ -80,13 +79,16 @@ export function App() {
         {/* Full Screen Views */}
         <AnimatePresence>
           {activeTab === 'challenges' && <div className="absolute inset-0 z-20 bg-[#0F1419]">
-              <ChallengesView />
+              <ChallengesView  onNavigateToCamping={() => setActiveTab('camping')} />
             </div>}
-          {activeTab === 'stats' && <div className="absolute inset-0 z-20 bg-[#0F1419]">
-              <MobileStats />
-            </div>}
+            
+          
           {activeTab === 'camping' && <div className="absolute inset-0 z-20 bg-[#0F1419]">
-              <CampingView />
+            <CampingView onSelectLocation={(site) => {
+              setActiveTab('map');
+              setIsSheetOpen(true);
+              // optionally: setSelectedLocation(site)
+            }} /> 
             </div>}
           {activeTab === 'profile' && <div className="absolute inset-0 z-20 bg-[#0F1419]">
               <ProfileView />

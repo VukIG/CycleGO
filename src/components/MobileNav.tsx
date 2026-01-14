@@ -1,5 +1,5 @@
 import React from 'react';
-import { Map, Users, Tent, User, BarChart2 } from 'lucide-react';
+import { Map, House, Bike, User } from 'lucide-react';
 import { motion } from 'framer-motion';
 interface MobileNavProps {
   activeTab: string;
@@ -12,21 +12,18 @@ export function MobileNav({
   isRiding = false
 }: MobileNavProps) {
   const tabs = [{
+    id: 'challenges',
+    icon: House,
+    label: 'Home'
+  }, {
     id: 'map',
     icon: Map,
     label: 'Map'
-  }, {
-    id: 'challenges',
-    icon: Users,
-    label: 'Co-op'
-  }, {
-    id: 'stats',
-    icon: BarChart2,
-    label: 'Stats'
+    
   }, {
     id: 'camping',
-    icon: Tent,
-    label: 'Camping'
+    icon: Bike,
+    label: 'Trip'
   }, {
     id: 'profile',
     icon: User,

@@ -15,9 +15,7 @@
     "framer-motion": "^11.5.4",
     "lucide-react": "0.522.0",
     "react-leaflet": "^4.2.1",
-    "leaflet": "^1.9.4",
-    "leaflet/dist/images/marker-icon.png": "latest",
-    "leaflet/dist/images/marker-shadow.png": "latest"
+    "leaflet": "^1.9.4"
   },
   "devDependencies": {
     "@types/node": "^20.11.18",

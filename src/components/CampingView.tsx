@@ -65,7 +65,9 @@ const allLocations = [{
   icon: Coffee,
   color: 'text-amber-400'
 }];
-export function CampingView() {
+export function CampingView({ onSelectLocation }: {
+  onSelectLocation: (location: any) => void;
+}) {
   const [filter, setFilter] = useState('all');
   const filters = [{
     id: 'all',
@@ -90,10 +92,19 @@ export function CampingView() {
   }];
   const filteredLocations = filter === 'all' ? allLocations : allLocations.filter(loc => loc.type === filter);
   return <div className="h-full bg-[#0F1419] pt-20 px-4 overflow-y-auto pb-24">
+      
+      {/* Map Preview (Placeholder) */}
+      <div className="rounded-2xl bg-slate-800/50 border border-slate-700 mb-6 flex items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0 opacity-30 bg-[url('https://cartodb-basemaps-a.global.ssl.fastly.net/dark_all/14/8192/5461.png')] bg-cover" />
+        <img src="../res/image.png" alt="" />
+      </div>
       <div className="flex justify-between items-end mb-6">
         <div>
-          <h1 className="text-3xl font-bold text-slate-100 mb-1">Camping</h1>
-          <p className="text-slate-400 text-sm">Find your spot for the night</p>
+          <h1 className="text-3xl font-bold text-slate-100 mb-1">Camping trip to Pula</h1>
+          <p className="text-slate-400 text-sm">Bike where once gladiators used to walk</p>
+          <br />
+          <p className="text-slate-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo assumenda eius fugiat quas natus officiis doloribus sunt? A quae non veritatis eaque quisquam voluptates quam rem iusto doloribus consequuntur reiciendis eius odit eligendi officiis, suscipit, in, nulla pariatur tempora voluptate ratione ipsa vero nemo facilis similique. Eum itaque voluptatibus doloremque voluptatum? Dolore doloribus facere veritatis officiis unde dolor, error nesciunt veniam iste explicabo, aliquid nobis voluptates eaque dolorum harum rerum libero vitae nisi aperiam impedit autem consectetur. Eligendi incidunt, magni nobis facilis distinctio libero dolore sunt neque earum laborum rem cupiditate labore molestiae quibusdam doloremque odio molestias tempore harum obcaecati.</p>
+
         </div>
       </div>
 
@@ -104,14 +115,7 @@ export function CampingView() {
             <span className="text-sm font-medium">{f.label}</span>
           </button>)}
       </div>
-
-      {/* Map Preview (Placeholder) */}
-      <div className="h-48 rounded-2xl bg-slate-800/50 border border-slate-700 mb-6 flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-30 bg-[url('https://cartodb-basemaps-a.global.ssl.fastly.net/dark_all/14/8192/5461.png')] bg-cover" />
-        <button className="relative z-10 px-4 py-2 bg-emerald-600 rounded-lg text-white font-medium text-sm shadow-lg">
-          View on Map
-        </button>
-      </div>
+      
 
       {/* List */}
       <div className="space-y-4">
@@ -126,7 +130,7 @@ export function CampingView() {
         y: 0
       }} transition={{
         delay: i * 0.05
-      }} className="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-4 active:scale-[0.98] transition-transform">
+      }} className="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-4 active:scale-[0.98] transition-transform" onClick={() => onSelectLocation(site)}>
             <div className="flex justify-between items-start mb-2">
               <div className="flex items-center gap-3">
                 <div className={`p-2 rounded-xl bg-slate-700/50 ${site.color}`}>
