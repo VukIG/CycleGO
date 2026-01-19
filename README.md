@@ -1,6 +1,7 @@
 ## Overview
 
-The "CycleGo" high-fidelity prototype is a mobile app designed for bike challenge navigation. It was built using React and Vite, and is designed to be run as a web application. The app includes several key features:
+The "CycleGo" high-fidelity prototype is a mobile app designed for bike challenge navigation. It was built using React and Vite, and is designed to be run as a web application. It is deployed using netlify as of the moment and you can access it using 
+<a href="https://cyclegoo.netlify.app/">this</a> link here. The app includes several key features:
 
 * **Home Screen:** Shows recommendations for rides and progress on achievements. [[00:06](http://www.youtube.com/watch?v=2ySjU8z2cac&t=6)]
 * **Trip Section:** Provides details on example trips, including location descriptions and points of interest. [[00:32](http://www.youtube.com/watch?v=2ySjU8z2cac&t=32)]
